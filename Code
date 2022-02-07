@@ -1,0 +1,66 @@
+import pygame
+import random
+
+
+pygame.init()
+pygame.display.set_caption("bruh") 
+screen = pygame.display.set_mode((500, 500))
+clock = pygame.time.Clock()
+
+for i in range(3, 22, 3):
+    print(i)
+    
+snurf = int(input())
+
+for i in range(snurf):
+    print("SNURFLE ")
+    
+    
+    
+    
+def MonsterGen(biome):
+    
+    munsta = random.randrange (1,100)
+    
+    if biome == 'd': #desert
+        if munsta <= 50:
+            print ("the monster is a skeleton")
+        elif munsta <= 80:
+            print("the monster is a spider")
+        else:
+            print("the monster is a husk")
+
+    if biome == 'f':
+        if munsta <= 30:
+            print ("da zombee has spawnt")
+        elif munsta <= 60:
+            print ("da skilitton has spawnt")
+        elif munsta <= 70:
+            print("wit ch has spawnt")
+        else:
+            print("nothing spawned")
+            
+doExit = False
+
+
+
+while not doExit:
+    clock.tick(60)
+
+    events = pygame.event.get()
+
+    for event in events:
+      if event.type == pygame.quit:
+        doExit = True
+        
+        
+
+    biome = input()
+    
+    MonsterGen(biome)
+
+    screen.fill((5, 5, 100))
+    
+    pygame.display.flip() 
+
+pygame.quit()
